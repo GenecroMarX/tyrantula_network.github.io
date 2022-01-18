@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+  <head>
+<link rel="shortcut icon" type="image/png" 
+      href="{{ "/assets/images/favicon.ico"  | absolute_url }}">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+{% seo %}
+    {% include head-custom.html %}
+    <style>
+
+.topnav {
+  overflow: hidden;
+    display: flex;
+  background-color: #333;
+    align-items: center;
+  justify-content: center;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 12px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ce2727;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #ce2727;
+  color: white;
+}
+</style>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      
+        <header class="inner">
+          {% if site.github.is_project_page %}
+            <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
+          {% endif %}
+
+          <h1 align=center id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
+          <h2 align=center id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+
+          {% if site.show_downloads %}
+            <section id="downloads">
+              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
+            </section>
+          {% endif %}
+        </header>
+    </div>
+    <div class="topnav">
+  <a href="https://genecromarx.github.io">Home</a>
+            <a href="https://genecromarx.github.io/blogs">Blogs</a>
+        <a href="https://genecromarx.github.io/addons">MC:BE</a>
+      <a href="https://behance.net/genecromarx" target="_blank">Behance</a>
+  <a href="https://genecromarx.github.io/docs/about">About</a>
+</div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        {{ content }}
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        {% if site.github.is_project_page %}
+        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+      </footer>
+    </div>
+  </body>
+</html>
